@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'footer_message' => '하나님과 교회 그리고 이웃을 섬기는 지도자',
+    'street' => '주소: 서울시 금천구 시흥동 122-5 금성빌딩 4층 ICS',
+    'phone_address' => '전화: 02)747-0691',
+    'email' => '이메일: icseminary@icseminary.org',
+    'about_school' => '학교 안내',
+    'about_us' => 'ABOUT ICS',
+    'timetable' => '학사 일정',
+    'our_teachers' => '교수.강사',
+    'contact_us' => '문의하기',
+    'faq' => '자주하는 질문',
+    'study_at' => '학사안내',
+    'undergraduate' => '학사 일정',
+    'graduate' => '학사 제도',
+    'continuing' => 'continuing',
+    'professional' => '학사 규정',
+    'courses' => '학과',
+    'subscribe' => '구독',
+    'subscribe_message' => '뉴스 레터를 구독하여 매일 새로운 업데이트와 정보 등을 받아보세요.',
+    'email_placeholder' => '귀하의 이메일',
+    'follow_us' => '주여! 내가 여기 있나 이다',
+    'copyright' => 'COPYRIGHT (C) 2021 ICS ALL RIGHTS RESERVED.',
+];

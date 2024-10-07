@@ -1,0 +1,94 @@
+
+.tabs{
+    //    overflow: auto;
+}
+.tabs{}
+.tabs ul {
+    display: flex;
+    // overflow: auto;
+}
+.tabs ul li {
+    ;
+    font-size: 14px;
+    font-weight: 500;
+    @include d_flex_center;
+    position: relative;
+    cursor: pointer;
+    white-space: nowrap;
+    padding: .61rem 1.2rem;
+    border-bottom: 3px solid transparent;
+    color: $color_main;
+    i {
+        margin-right: 5px;
+    }
+    .close_icon {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+.tabs ul li.active {
+    position: relative;
+    background: $color_white;
+    border-bottom: 3px solid $color_info_hover;
+}
+
+.tabs ul.tab_two li{
+    width: 50%;
+}
+.tabs ul.tab_three li{
+    width: 50%;
+}
+
+.tabs ul.tab_four li{
+    width: 25%;
+}
+.tabs ul.tab_six li{
+    width: 16.66%;
+}
+.tab_three a ,
+.tabs ul.tab_three li{
+    width: 33.33%;
+}
+.tab_content_wrapper {
+    width: 100%;
+    // border: 1px solid $border_color;
+    padding: 10px;
+}
+
+
+
+.tab_content {
+    display: none;
+}
+.tab_content.show {
+    display: block;
+}
+.show .fadein {
+    animation: fadein 0.7s ease;
+}
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
+
+.tab_header {
+    position: relative;
+    top: -10px;
+}
+
+.tab_header .mCSB_horizontal.mCSB_inside > .mCSB_container {
+    margin-right: 0;
+    margin-bottom: 5px;
+}
+.tab_header .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+    width: auto;
+    height: 9px;
+    top: auto;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}

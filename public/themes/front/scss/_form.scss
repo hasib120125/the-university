@@ -1,0 +1,216 @@
+.form_global {
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: $color_main!important;
+    background-color: $color_white;
+    border: 1px solid $border_color;
+    border-radius: .25rem;
+    position: relative;
+    transition: all .15s;
+    &:focus {
+        outline: 0;
+        box-shadow: none;
+        border: 1px solid $theme_color;
+    }
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    textarea.form_global {
+        height: auto;
+    }
+}
+
+.form_row {
+    position: relative;
+    margin-bottom: 10px;
+    label {
+        display: flex;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .error-div {
+        position: absolute;
+        bottom: -12px;
+        font-size: 13px;
+    }
+}
+
+.form_row_inline {
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    position: relative;
+    label {
+        width: 100px;
+        min-width: 100px;
+        padding-right: 10px;   
+    }
+    textarea.form_global {
+        height: auto;
+    }
+    .form_global {
+        width: 100%;
+    }
+    .file_input {
+        width: 100%;
+    }
+    .form_checkbox {
+        width: 100%;
+    }
+    .error-div {
+        padding-left: 100px;
+        position: absolute;
+        bottom: -12px;
+        font-size: 13px;
+    }
+}
+
+/*----------------------------
+    CUSTOM RADIO
+-----------------------------*/
+.form_radio {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.form_radio [type="radio"] {
+    position: absolute;
+    left: -9999px;
+}
+.form_radio label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+    line-height: initial;
+    padding-right: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    min-height: 17px;
+    color: $color_main;
+    white-space: nowrap;
+}
+.form_radio [type="radio"] + label:before, 
+.form_radio [type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0px;
+    width: 18px;
+    height: 18px;
+    z-index: 0;
+    transition: .28s ease;
+    border-radius: 50%;
+}
+
+.form_radio [type=radio]:checked + label:after {
+    border: 2px solid $theme_color;
+    background-color: $theme_color;
+    z-index: 0;
+    transition: .28s ease;
+}
+.form_radio [type="radio"]:not(:checked) + label:before, 
+.form_radio [type="radio"]:not(:checked) + label:after {
+    border: 1px solid $border_color;
+}
+
+
+/*----------------------------
+    CUSTOM CHECKBOX
+-----------------------------*/
+
+.form_checkbox {
+    display: inline-block;
+    position: relative;
+    margin-bottom: 4px;
+}
+
+.form_checkbox [type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+.form_checkbox label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    margin-bottom: 0;
+    line-height: initial;
+    padding-right: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    min-height: 17px;
+    color: $color_main;
+    white-space: nowrap;
+}
+
+.form_checkbox [type="checkbox"]:checked+label:before,
+.form_checkbox [type="checkbox"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid $border_color;
+    background: #fff;
+    border-radius: 0px;
+}
+
+.form_checkbox [type="checkbox"]:not(:checked)+label:after,
+.form_checkbox [type="checkbox"]:checked+label:after {
+    position: absolute;
+    top: 2px;
+    left: 0px;
+    width: 18px;
+    height: 18px;
+    content: '✔';
+    position: absolute;
+    font-size: 12px;
+    line-height: 0.8;
+    color: #fff;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    box-shadow: none;
+    background: $theme_color;
+    @include d_flex_center;
+}
+
+.form_checkbox [type="checkbox"]:disabled+label:before{
+    opacity: .5;
+    border: 1px solid #999;
+}
+.form_checkbox [type="checkbox"]:disabled+label:after{
+    position: absolute;
+    top: 4px;
+    left: 2px;
+    width: 7px;
+    height: 12px;
+    content: '✔';
+    position: absolute;
+    font-size: 15px;
+    line-height: 0.8;
+    color: #999;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.form_checkbox [type="checkbox"]:not(:checked)+label:after {
+    opacity: 0;
+}
+.form_checkbox [type="checkbox"]:disabled+label:after {
+    opacity: .5;
+}

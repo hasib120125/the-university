@@ -1,0 +1,129 @@
+@import 'all';
+/*******************************
+   MAIN WRAPPER
+********************************/
+.header_area {
+    padding: 15px 15px 0px 0px;
+    position: fixed;
+    width: calc(100% - 235px);
+    right: 0;
+    z-index: 12;
+    background: $main_bg;
+    .header_inner {
+        height: 50px;
+        background: #fff;
+        border-radius: 2px;
+        box-shadow: 0px 0px 9px 1px rgba(34, 41, 47, .10);
+        @include d_flex_btwn;
+        > ul {
+            @include d_flex_center;
+            > li {
+                @include d_flex_center;
+                margin-left: 5px;
+                > i {
+                    font-size: 24px;
+                    padding-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+#content_wrap {
+    padding-left: 220px;
+    padding-top: 80px;
+}
+
+
+// DASHOBOARD CONTENT
+
+.inline_card {
+    padding : 10px;
+    // padding-left: 55px;
+    position: relative;
+    box-shadow: 0px 4px 24px 0px rgba(34, 41, 47, .10);
+    background: $nav_bg;
+    margin-bottom: 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    span {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        // background: $dropdown_bg;
+        // height: 100%;
+        i {
+            // position: absolute;
+            // top: 50%;
+            // left: 10px;
+            // transform: translateY(-50%);
+            font-size: 25px;
+            display: inline-flex;
+        }
+    }
+    p {
+        font-weight: 500;
+        
+        font-size: 14px;
+    }
+    h2 {
+        margin-bottom: 10px;
+        font-size: 25px;
+        margin-bottom: 15px;
+        font-weight: 400;
+    }
+    svg {
+        height: 100px;
+        width: 100%;
+        g {
+            width: 100%;
+        }
+        .ct-area {
+            fill: $color_info;
+        }
+        .ct-line {
+            fill: $color_info;
+        }
+    }
+}
+
+
+
+// LECTURE APPLY
+.l_apply_content {
+    border: 1px solid #d8d6de;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    transition: all .2s;
+    &:hover {
+        box-shadow: 1px 1px 25px 0px #d8d6de;
+    }
+    .inner_text {
+        padding: 10px;
+        border-top: 1px solid #d8d6de;
+        margin-top: 15px;
+        h2 {
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        ul {
+            
+            li {
+                position: relative;
+                padding: 2px 0px;
+                padding-left: 110px;
+                span:first-child {
+                    min-width: 110px;
+                    font-weight: 500;
+                    position: absolute;
+                    top: 2px;
+                    left: 0;
+                }
+                span:last-child {}
+            }
+        }
+    }
+}

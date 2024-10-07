@@ -1,0 +1,151 @@
+
+@import 'mixin/display';
+@import 'mixin/transition';
+// .accordion {
+//     margin-bottom: -1px;
+//     &:last-child {
+//         margin-bottom: 0;
+//     }
+// }
+// .accrodion_title_wrapper {
+//     @include d_flex_btwn;
+//     font-weight: bold;
+//     position: relative;
+//     cursor: pointer;
+//     font-size: 14px;
+//     font-weight: 500;
+//     color: $color_main;
+//     border: 1px solid $border_color;
+//     padding: 0px 15px;
+// }
+// .ics_accrodion_title {
+//     position: relative;
+//     width: 100%;
+//     transition: all .3s;
+//     padding: 19px 0px;
+// }
+// .ics_accrodion_title span{
+//     position: relative;
+// }
+// .ics_accrodion_title span{}
+// .ics_accrodion_title.arrow_right {
+//     padding-right:20px;
+// }
+// .ics_accrodion_title.arrow_left {
+//     padding-left:20px;
+// }
+// .ics_accrodion_title:before {
+//     font-family: 'LineIcons' !important;
+//     position: absolute;
+//     content: "\ea58";
+//     transition: all .3s;
+//     position: absolute;
+//     right: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     font-size: 10px;
+// }
+// .ics_accrodion_title.open:before {
+//     transition: all .3s;
+//     content: "\ea5e";
+// }
+
+// .accordion_body {
+//     position: relative;
+//     background: #fff;
+//     padding: 15px;
+//     border-top: 0;
+//     display: none;
+//     border: 1px solid $border_color;
+//     border-top: none;
+//     p {
+//         margin-bottom: 0;
+//     }
+// }
+// .accordion_body.open {
+//     display: block;
+// }
+
+.common_accordion {
+    padding-bottom: 40px;
+    .card {
+        border-radius: 0;
+        border: none;
+        border-top: 1px solid #ccc;
+        margin-bottom: -1px;
+        margin-bottom: 15px;
+        .card-header {
+            padding: 0 10px;
+            border-radius: 0;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #ccc;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            button {
+                width: 100%;
+                text-align: left;
+                color: #000;
+                border-radius: 0;
+                border: none;
+                position: relative;
+                font-weight: 500;
+                padding: 8px 0px;
+                font-size: 16px;
+                @include belowIpadpro {
+                    padding: 10px 15px;
+                }
+                &:hover {
+                    text-decoration: none;
+                    color: $btncolor;
+                }
+                &:focus {
+                    outline: 0;
+                    box-shadow: none;
+                    text-decoration: none;
+                }
+                &.collapsed:before {
+                    content: "\ea58";
+                }
+                &:before {
+                    content: "\ea5e";
+                    font-size: 12px;
+                    font-weight: 900;
+                    position: absolute;
+                    top: 50%;
+                    right: 5px;
+                    transform: translateY(-50%);
+                    font-family: "LineIcons";
+                    @include belowIpadpro {
+                        right: 0px;
+                    }
+                }
+            }
+        }
+        .card-body {
+            padding: 6px 10px;
+            border: 1px solid #ccc;
+            border-top: none;
+            ul {
+                li {
+                    padding: 3px 0px;
+                    a {
+                        @include transition;
+                        font-size: 15px;
+                        &:hover {
+                            color: $btncolor;
+                            @include transition;
+                        }
+                    }
+                    &.active {
+                        a {
+                            color: $btncolor;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

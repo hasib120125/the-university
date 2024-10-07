@@ -1,0 +1,30 @@
+.breadcrumbs{
+    position: relative;
+    text-align: right;
+}
+.page-breadcrumbs{
+    color: #000;
+    font-weight: normal;
+    line-height: normal;
+    list-style: none;
+    margin: 5px 0;
+    padding: 12px 0;
+    @include mobile {
+        padding: 4px 0px;
+    }
+}
+.page-breadcrumbs li{
+    display: inline-block;
+    margin: 0;
+}
+.page-breadcrumbs li a{
+    color: #000;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+ul.page-breadcrumbs li + li:before {
+    padding: 0 10px;
+    font-family: LineIcons;
+    content: "\EA5C";
+    font-size: 9px;
+}

@@ -1,0 +1,62 @@
+@import '../mixin/display';
+.pagination_global {
+    padding: 10px;
+    @include d_flex_btwn;
+    background: $color_white;
+}
+.pagination_global ul{
+    @include d_flex_center;
+}
+.pagination_global ul li{
+    background-color: #f3f2f7;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    @include d_flex_center;
+    &:nth-child(2) {
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+    }
+    &:nth-last-child(2) {
+        border-top-right-radius: 5rem;
+        border-bottom-right-radius: 5rem;
+    }
+    &:first-child {
+        border-radius: 50%;
+        margin-right: 5px;
+        &:hover {
+            background: $color_info;
+            color: #fff;  
+            border : 1px solid $color_info;
+            border-radius: 50%;
+        }
+    }
+    &:last-child {
+        border-radius: 50%;
+        margin-left: 5px;
+        &:hover {
+            background: $color_info;
+            color: #fff;  
+            border : 1px solid $color_info;
+            border-radius: 50%;
+        }
+    }
+}
+
+.pagination_global ul li.active {
+
+    a {
+        background: $color_info;
+        color: #fff;  
+        border : 1px solid $color_info;
+        border-radius: 50%;
+    }
+}
+.pagination_global ul li a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include d_flex_center;
+}

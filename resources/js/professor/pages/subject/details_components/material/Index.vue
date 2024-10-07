@@ -1,0 +1,101 @@
+<template>
+    <div>
+        <div class="row">
+            <div class="col_12">
+                <div class="card">
+                    <div class="card-body">
+                        <router-link :to="{ name: 'subject_material_add' }" class="btn btn_info">{{ trans('professor.form.lecture_material.add_new_material') }}</router-link>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col_12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">{{ trans('professor.form.lecture_material.lecture_material') }}</div>
+                    </div>
+                    <div class="card-body">
+                        <table-component :api-url="`/api/professor/subjects/${$route.params.id}/materials?semester_id=${$route.params.semester_id}`"
+                                         :fields="fields"
+                                         ref="tableComponent"
+                                         :sort-order="sortOrder" @delete="deleteItem">
+                        </table-component>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import TableComponent from "./../../../../components/TableComponent";
+
+export default {
+    components: {
+        TableComponent
+    },
+    data() {
+        return {
+            fields: [
+                {
+                    name: 'title',
+                    title: this.trans('professor.label.title'),
+                    sortField: 'title',
+                    searchable: true
+                },
+                {
+                    name: 'action-slot',
+                    title: this.trans('professor.label.action'),
+                    searchable: false,
+                    data: [
+                        {
+                            class: 'btn btn_sm btn_success mr_5',
+                            title:  this.trans('professor.label.details'),
+                            route: 'subject_material_view',
+                            params: {material_id: 'id'}
+                        },
+                        {
+                            class: 'btn btn_sm btn_info mr_5',
+                            title:  this.trans('professor.label.edit'),
+                            route: 'subject_material_update',
+                            params: {material_id: 'id'}
+                        },
+                        {
+                            class: 'btn btn_sm btn_danger',
+                            title:  this.trans('professor.label.delete'),
+                            action: 'delete'
+                        }
+                    ]
+                }
+            ],
+            sortOrder: []
+        }
+    },
+    methods: {
+        deleteItem(item) {
+            this.$swal({
+                title: this.trans('professor.label.delete_confirmation'),
+                text: this.trans('professor.label.warning'),
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: this.trans('professor.label.yes_delete'),
+                cancelButtonText: this.trans('professor.label.no_cancel'),
+                reverseButtons: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    axios.delete(`/api/professor/lectures/${item.lecture_id}/materials/${item.id}`).then(() => {
+                        this.$refs.tableComponent.refresh();
+                        this.$swal.fire(
+                            this.trans('common.message.deleted'),
+                            this.trans('common.message.delete_message'),
+                            'success'
+                        )
+                    });
+                }
+            });
+        }
+    }
+}
+</script>

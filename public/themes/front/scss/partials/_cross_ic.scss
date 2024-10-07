@@ -1,0 +1,57 @@
+.modal_close_icon {
+    position: absolute;
+    right: 15px;
+    width: 14px;
+    height: 14px;
+    overflow: hidden;
+    cursor: pointer;
+    top: 10px;
+    z-index: 5;
+    right: 10px;
+}
+.modal_close_icon::before, .modal_close_icon::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+    height: 1px;
+}
+.modal_close_icon::before {
+    transform: rotate(45deg);
+}
+.modal_close_icon::after {
+    transform: rotate(-45deg);
+}
+
+.m_close_menu {
+    position: absolute;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    overflow: hidden;
+    cursor: pointer;
+    top: 10px;
+    z-index: 5;
+    right: 10px;
+}
+.m_close_menu::before, .m_close_menu::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    margin-top: -1px;
+    background: #000;
+    height: 1px;
+}
+.m_close_menu::before {
+    transform: rotate(45deg);
+}
+.m_close_menu::after {
+    transform: rotate(-45deg);
+}

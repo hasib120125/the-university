@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'footer_message' => 'It is a long-established fact that a reader will be distracted by the readable.',
+    'street' => 'Address: No 40 Baria Sreet 133/2',
+    'phone_address' => 'Phone: (295) 146 8067',
+    'email' => 'Email: icseminary@icseminary.org',
+    'about_school' => 'About School',
+    'about_us' => 'About Us',
+    'timetable' => 'Timetable',
+    'our_teachers' => 'Our Teachers',
+    'contact_us' => 'Contact Us',
+    'faq' => 'Faq',
+    'study_at' => 'Study At',
+    'undergraduate' => 'Undergraduate',
+    'graduate' => 'Graduate',
+    'continuing' => 'Continuing',
+    'professional' => 'Professional',
+    'courses' => 'Courses',
+    'subscribe' => 'Subscribe E-News',
+    'subscribe_message' => 'Subscribe to our newsletter to get daily new updates and information etc.',
+    'email_placeholder' => 'Your Email',
+    'follow_us' => 'Follow Us',
+    'copyright' => '2021 ICS University',
+];
